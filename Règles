@@ -1,0 +1,40 @@
+Contraintes (ce sont des minimums !) :
+—  8 classes ;
+—  3 niveaux de hierarchie ;
+—  2 fonctions virtuelles differentes et utilisees a bon escient ;
+—  2 surcharges d’operateurs ;
+—  2 conteneurs differents de la STL ;
+—  diagrammme de classe UML complet ;
+—  commentaire du code ;
+—  pas d’erreurs avec Valgrind ;
+—  rendu par depot git;
+—  pas de methodes/fonctions de plus de 30 lignes (hors commentaires, lignes vides et assert) ;
+—  utilisation d’un Makefile avec une regle ”all” et une regle ”clean”
+
+
+
+Nos classes:
+
+ Candidat
+ Electeur
+ Vote
+ Simu
+ Sondage
+ Media
+ Pays (à voir) , pour l'instant juste la France
+ 
+ CandidatFachiste
+ CandidatGentil
+ CandidatMechant
+ CandidatGentilMagouilleur
+ option ActuelPresident (bon mandat, mauvais mandat)
+ 
+ Con : public Electeur
+ GrosCon : public Con
+ PasTropCon : Electeur
+ 
+ VoteTruque
+ VoteNormal
+ 
+ 
+ option cout d'état (peu probable)
