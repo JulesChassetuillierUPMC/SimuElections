@@ -1,13 +1,14 @@
 #pragma once
-#include <stdlib>
 #include <iostream>
+#include "media.hh"
 
-class electeur
+class Electeur
 {
 	public:
-		electeur(int intelligence); // constructeur
-		~electeur(); // destructeur
-		int get_intelligence(electeur e);
+		Electeur(int intelligence); // constructeur
+		~Electeur(); // destructeur
+		int get_intelligence();
+		void TV(Media M); // modifie l'intelligence de l'electeur
 	private: 
-		int _intelligence; // 0 : con ; 1 : pas trop con
+		int _intelligence; // [0 3] : con ; [4 7] : pas trop con ; [8 10] : intelligent
 };
