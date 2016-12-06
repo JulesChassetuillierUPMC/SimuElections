@@ -8,11 +8,12 @@
 
 #include "candidat.hh"
 #include "media.hh"
+#include "electeur.hh"
 
 class Simulateur
 {
 public:
-	Simulateur(int nbE, int D);
+	Simulateur(int D);
 	~Simulateur();
 	void add_candidat(Candidat C);
 	void remove_candidat(Candidat C);
@@ -23,9 +24,11 @@ public:
 	void run();
 
 private:
-	int _nbElecteurs;
+	//int _nbElecteurs;
 	int _duree;
 	//int _nbCandidats;
 	std::vector<Candidat> _listeCandidats;
 	std::vector<Media> _listeMedias;
+	std::vector<Electeur> _listeElecteurs;
+
 };

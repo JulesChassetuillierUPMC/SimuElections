@@ -3,9 +3,8 @@
 using namespace std;
 
 
-	Simulateur::Simulateur(int nbE,int D)
-	:_nbElecteurs(nbE),
-	_duree(D)
+	Simulateur::Simulateur(int D)
+	:_duree(D)
 	{
 		_listeCandidats = new std::vector<Candidat>;
 		_listeMedias = new std::vector<Media>;
@@ -68,8 +67,8 @@ using namespace std;
 	void Simulateur::run()
 	{
 		int i;
-		for (int i = 0; i < _duree; ++i)
-		{
+	//	for (int i = 0; i < _duree; ++i)
+	//	{
 			int j;
 			for (vector<Media>::const_iterator it = _listeMedias.begin(); it!=_listeMedias.end();it++)
 			{
@@ -78,12 +77,16 @@ using namespace std;
 					*it1.influence(*it);
 				}
 			}
-			for (int j = 0; j < _nbElecteurs; ++j) // map
+			map<Electeur, int> map1;
+			for (vector<Electeur>::const_iterator it2 = _listeElecteurs.begin(); it2!=_listeElecteurs.end();it2++) // map
 			{
-				/* changement du choix de l'electeur */
-				/* Candidat ++*/
+				*it2.vote();
+				map1[*it2]++;
 			}
-		}
+	//	}
 		// On determine quel candidat a le plus de voix
+		// La map est automatiquement trié normalement	
 		// On l'affiche
+
+			cout <<"Le candidat qui a gagné est : " << (map1.end())->first << "avec " << (map1.end())->second << "voix" << endl;
 	}
