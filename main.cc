@@ -2,12 +2,14 @@
 #include "electeur.hh"
 #include "media.hh"
 #include "candidat.hh"
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 int main()
 {
+  srand(time(NULL));
 /* PARTIE TEST MEDIA */
-
   // constructeur media
   cout<<"Premier media : "<<endl;
   Media M("Le Monde",9);
@@ -52,7 +54,7 @@ int main()
   int image2 = c.get_image();
   cout<<"\tImage post interview : "<< image2 <<endl;
   cout<<endl;
-  cout<<"Premier electeur d'intelligence "<<fute<<" se fait interviewer par "<<nom_media<<endl;
+  cout<<"Premier electeur d'intelligence "<<fute<<" consulte un article du journal "<<nom_media<<endl;
   e.TV(M);
   int fute2 = e.get_intelligence();
   cout<<"\tIntelligence post interview : "<< fute2 << endl;
