@@ -74,14 +74,13 @@ using namespace std;
 			{
 				for (vector<Candidat>::const_iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
 				{
-					*it1.influence(*it);
+					it1->influence(*it);
 				}
 			}
 			map<Electeur, int> map1;
 			for (vector<Electeur>::const_iterator it2 = _listeElecteurs.begin(); it2!=_listeElecteurs.end();it2++) // map
 			{
-				*it2.vote();
-				map1[*it2]++;
+				map1[it2->vote()]++;
 			}
 	//	}
 		// On determine quel candidat a le plus de voix
