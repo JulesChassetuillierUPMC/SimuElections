@@ -12,7 +12,7 @@ using namespace std;
 	}
 
 
-	~Simulateur()
+	Simulateur::~Simulateur()
 	{
 		_listeCandidats.clear();
 		_listeMedias.clear();
@@ -21,17 +21,17 @@ using namespace std;
 		delete _listeMedias;
 	}
 
-	void add_candidat(Candidat C)
+	void Simulateur::add_candidat(Candidat C)
 	{
 		_listeCandidats.push_back(C);
 	}
 	
-	void add_media(Media M)
+	void Simulateur::add_media(Media M)
 	{
 		_listeMedias.push_back(M);
 	}
 
-	void remove_candidat(Candidat C)
+	void Simulateur::remove_candidat(Candidat C)
 	{
 		for (vector<Candidat>::const_iterator it = _listeCandidats.begin(); it!=_listeCandidats.end();it++)
 		{
@@ -45,13 +45,13 @@ using namespace std;
 			}
 		}
 	}
-	void remove_media(Media M)
+	void Simulateur::remove_media(Media M)
 	{
-		for (vector<Media>::const_iterator it = _listeMedias.begin(); it!=_listeMedias.end();it++)
+		for (vector<Media>::const_iterator it2 = _listeMedias.begin(); it2!=_listeMedias.end();it2++)
 		{
-			if(C.get_nom()==*it.get_nom())
+			if(C.get_nom()==*it2.get_nom())
 			{
-				_listeMedias.remove(it);
+				_listeMedias.remove(it2);
 			}
 			else
 			{
@@ -59,13 +59,31 @@ using namespace std;
 			}
 		}
 	}
-	void clear()
+	void Simulateur::clear()
 	{
 		_listeCandidats.clear();
 		_listeMedias.clear();
 	}
 
-	void run()
+	void Simulateur::run()
 	{
-
+		int i;
+		for (int i = 0; i < _duree; ++i)
+		{
+			int j;
+			for (vector<Media>::const_iterator it = _listeMedias.begin(); it!=_listeMedias.end();it++)
+			{
+				for (vector<Candidat>::const_iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
+				{
+					*it1.influence(*it);
+				}
+			}
+			for (int j = 0; j < _nbElecteurs; ++j) // map
+			{
+				/* changement du choix de l'electeur */
+				/* Candidat ++*/
+			}
+		}
+		// On determine quel candidat a le plus de voix
+		// On l'affiche
 	}
