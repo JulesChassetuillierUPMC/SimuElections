@@ -2,13 +2,13 @@
 #include <stdlib>
 #include <iostream>
 
-class candidat
+class Candidat
 {
 	public: 
-		candidat(std::string p, int image); // constructeur 
-		~candidat(); // destructeur
-		std::string get_personnalite(candidat c);
-		int get_image(candidat c);
+		Candidat(std::string p, int image); // constructeur 
+		~Candidat(); // destructeur
+		std::string get_personnalite();
+		int get_image();
 
 	private:
 		std::string _personnalite; // neutre, gentil, gros enculé

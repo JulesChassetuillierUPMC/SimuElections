@@ -2,7 +2,7 @@
 #include <stdlib>
 #include <iostream>
 
-class media
+class Media
 {
 	public:
 		media(std::string name, int influence); // constructeur
