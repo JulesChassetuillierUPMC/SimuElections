@@ -8,8 +8,9 @@ class Candidat
 		~Candidat(); // destructeur
 		std::string get_personnalite();
 		int get_image();
-		void interview(Media M); // modifie l'image du candidat
 		std::string get_nom();
+		void interview(Media M); // modifie l'image du candidat
+		
 	private:
 		std::string _nom;
 		std::string _personnalite; // neutre, gentil, gros enculé

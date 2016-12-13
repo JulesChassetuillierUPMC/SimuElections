@@ -2,7 +2,7 @@
 #include <iostream>
 #include "media.hh"
 
-class Electeur
+class Electeur // a rajouter : + il est con, plus il a de chances de voter pour un enculé
 {
 	public:
 		Electeur(int intelligence); // constructeur

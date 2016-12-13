@@ -27,7 +27,7 @@ int main()
   cout<<endl;
   // constructeur candidat
   cout<<"Premier candidat : "<<endl;
-  Candidat c("Toto","neutre",4);
+  Candidat c("Toto","neutre",2);
   // get_nom()
   string name = c.get_nom();
   cout<<"\tNom : "<< name << endl;

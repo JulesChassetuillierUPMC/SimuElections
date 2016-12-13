@@ -1,11 +1,10 @@
 #pragma once
-#include <stdlib>
+//#include <stdlib>
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <map>
 #include <ctime>
-
 #include "candidat.hh"
 #include "media.hh"
 #include "electeur.hh"
