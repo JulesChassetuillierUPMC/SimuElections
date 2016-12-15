@@ -6,9 +6,9 @@ class Candidat
 	public: 
 		Candidat(std::string name,std::string p, int image); // constructeur 
 		~Candidat(); // destructeur
-		std::string get_personnalite();
-		int get_image();
-		std::string get_nom();
+		std::string get_personnalite() const; 
+		int get_image() const; 
+		std::string get_nom() const; 
 		void interview(Media M); // modifie l'image du candidat
 		
 	private:

@@ -12,12 +12,12 @@ Media::Media(std::string name, int influence):
 Media::~Media()
 {}
 
-string Media::get_name()
+string Media::get_name() const
 {
 	return _nom;
 }
 
-int Media::get_influence()
+int Media::get_influence() const
 {
 	return _influence;
 }

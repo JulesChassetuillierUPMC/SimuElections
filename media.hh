@@ -6,8 +6,8 @@ class Media
 	public:
 		Media(std::string name, int influence); // constructeur
 		~Media(); // destructeur
-		std::string get_name();
-		int get_influence();
+		std::string get_name() const; 
+		int get_influence() const; 
 
 	private:
 		std::string _nom;

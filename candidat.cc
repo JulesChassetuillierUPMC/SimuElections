@@ -14,17 +14,17 @@ Candidat::Candidat(std::string name,std::string p, int image):
 Candidat::~Candidat()
 {}
 
-string Candidat::get_personnalite()
+string Candidat::get_personnalite() const
 {
 	return _personnalite;
 }
 
-int Candidat::get_image()
+int Candidat::get_image() const
 {
 	return _image;
 }
 
-string Candidat::get_nom()
+string Candidat::get_nom() const
 {
 	return _nom;
 }
