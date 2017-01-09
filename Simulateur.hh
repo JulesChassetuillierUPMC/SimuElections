@@ -35,3 +35,5 @@ private:
 	std::vector<Electeur> _listeElecteurs;
 
 };
+
+//

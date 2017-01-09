@@ -67,6 +67,8 @@ int main()
   SiT.add_candidat(c);
   SiT.add_media(M);
   SiT.run();
+  
+  //
     
   return 0;
 }

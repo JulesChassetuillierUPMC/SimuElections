@@ -91,6 +91,7 @@ using namespace std;
 				 //map1[*it2]++; //Plus tard , implementer vote pour electeur
 			}
 	//	}
+	//
 		// On determine quel candidat a le plus de voix
 		// La map est automatiquement trié normalement	
 		// On l'affiche

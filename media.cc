@@ -21,3 +21,5 @@ int Media::get_influence() const
 {
 	return _influence;
 }
+
+//
