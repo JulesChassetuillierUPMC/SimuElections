@@ -67,13 +67,12 @@ using namespace std;
 	string Simulateur::vote(Electeur E)
 	{
 		int random_number = rand() % _listeCandidats.size() ;
-		//vector<Candidat>::iterator it = _listeCandidats.begin();
-		//std::advance(it, random_number);
+
 		return _listeCandidats[random_number].get_nom();
-		//return *it.get_nom();
+
 	}
 
-	void Simulateur::run()
+	void Simulateur::run() 
 	{
 		//int i; Pas besoin pour l'instant
 	//	for (int i = 0; i < _duree; ++i)
@@ -81,15 +80,15 @@ using namespace std;
 			//int j; pas besoin pour l'instant
 			for (vector<Media>::const_iterator it = _listeMedias.begin(); it!=_listeMedias.end();it++)
 			{
-				for (vector<Candidat>::const_iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
+				for (vector<Candidat>::iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
 				{
-					//it1->interview(*it); //Plus tard, implementer influence pour candidat
+					it1->interview(*it); //Plus tard, implementer influence pour candidat
 				}
 			}
 			map<Electeur, int> map1;
 			for (vector<Electeur>::const_iterator it2 = _listeElecteurs.begin(); it2!=_listeElecteurs.end();it2++) // map
 			{
-				 //map1[vote(*it2)]++; //Plus tard , implementer vote pour electeur
+				 //map1[*it2]++; //Plus tard , implementer vote pour electeur
 			}
 	//	}
 		// On determine quel candidat a le plus de voix

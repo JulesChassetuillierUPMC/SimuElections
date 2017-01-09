@@ -24,7 +24,7 @@ public:
 
 
 	std::string vote(Electeur E);
-	void run();
+	void run() ;
 
 private:
 	//int _nbElecteurs;
