@@ -16,5 +16,3 @@ class Candidat
 		std::string _personnalite; // neutre, gentil, gros enculé
 		int _image; // [0 3] : mauvaise, [4 7] : moyenne, [8 10] : bonne 	
 };
-
-//

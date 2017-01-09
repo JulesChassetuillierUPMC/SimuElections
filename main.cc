@@ -68,7 +68,6 @@ int main()
   SiT.add_media(M);
   SiT.run();
   
-  //
     
   return 0;
 }

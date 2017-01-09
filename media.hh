@@ -14,6 +14,3 @@ class Media
 		int _influence; // faible[0 3], moyenne [4 7], forte [8 10]
 
 };
-
-
-//

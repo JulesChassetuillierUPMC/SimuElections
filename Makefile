@@ -9,9 +9,3 @@ $(EXEC): $(OBJECTS)
 	$(CC) $(CCFLAGS) -c $< -o $@
 clean:
 	rm -f $(OBJECTS) $(EXEC)
-	
-	
-	
-	
-	
-	

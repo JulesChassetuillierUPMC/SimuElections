@@ -15,4 +15,3 @@ class Electeur // a rajouter : + il est con, plus il a de chances de voter pour 
 		int _intelligence; // [0 3] : con ; [4 7] : pas trop con ; [8 10] : intelligent
 };
 
-//
