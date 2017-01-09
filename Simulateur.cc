@@ -64,6 +64,15 @@ using namespace std;
 		_listeMedias.clear();
 	}
 
+	string Simulateur::vote(Electeur E)
+	{
+		int random_number = rand() % _listeCandidats.size() ;
+		//vector<Candidat>::iterator it = _listeCandidats.begin();
+		//std::advance(it, random_number);
+		return _listeCandidats[random_number].get_nom();
+		//return *it.get_nom();
+	}
+
 	void Simulateur::run()
 	{
 		//int i; Pas besoin pour l'instant
@@ -74,18 +83,19 @@ using namespace std;
 			{
 				for (vector<Candidat>::const_iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
 				{
-					// it1->influence(*it); Plus tard, implementer influence pour electeur
+					//it1->interview(*it); //Plus tard, implementer influence pour candidat
 				}
 			}
 			map<Electeur, int> map1;
 			for (vector<Electeur>::const_iterator it2 = _listeElecteurs.begin(); it2!=_listeElecteurs.end();it2++) // map
 			{
-				// map1[it2->vote()]++; Plus tard , implementer vote pour electeur
+				 //map1[vote(*it2)]++; //Plus tard , implementer vote pour electeur
 			}
 	//	}
 		// On determine quel candidat a le plus de voix
 		// La map est automatiquement trié normalement	
 		// On l'affiche
 
-	//		cout <<"Le candidat qui a gagné est : " << (map1.end())->first << "avec " << (map1.end())->second << "voix" << endl; A faire plus tard , implementer << pour Electeur
+		
+		//cout <<"Le candidat qui a gagné est : " << (map1.end())->first << "avec " << (map1.end())->second << "voix" << endl; //A faire plus tard , implementer << pour Electeur
 	}

@@ -2,6 +2,7 @@
 #include "electeur.hh"
 #include "media.hh"
 #include "candidat.hh"
+#include "Simulateur.hh"
 #include <ctime>
 #include <cstdlib>
 using namespace std;
@@ -58,5 +59,14 @@ int main()
   e.TV(M);
   int fute2 = e.get_intelligence();
   cout<<"\tIntelligence post interview : "<< fute2 << endl;
+  
+  
+  /* PARTIE TEST SIMULATION */
+  int dt = 12;
+  Simulateur SiT(dt);
+  SiT.add_candidat(c);
+  SiT.add_media(M);
+  SiT.run();
+    
   return 0;
 }

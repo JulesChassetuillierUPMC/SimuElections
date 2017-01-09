@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <string>
+
 #include "media.hh"
 
 class Electeur // a rajouter : + il est con, plus il a de chances de voter pour un enculé
