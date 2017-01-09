@@ -66,9 +66,9 @@ using namespace std;
 
 	string Simulateur::vote(Electeur E)
 	{
-		int random_number = rand() % _listeCandidats.size() ;
+		int randnumber = rand() % _listeCandidats.size() ;
 
-		return _listeCandidats[random_number].get_nom();
+		return _listeCandidats[randnumber].get_nom();
 
 	}
 
@@ -85,17 +85,40 @@ using namespace std;
 					it1->interview(*it); //Plus tard, implementer influence pour candidat
 				}
 			}
-			map<Electeur, int> map1;
+			
+			int i;
+			for(i=0;i<1000;i++)
+			{
+				int randInt = rand() % 11;
+				Electeur E(randInt);
+				_listeElecteurs.push_back(E);
+			}
+			
+			map<string, int> map1;
 			for (vector<Electeur>::const_iterator it2 = _listeElecteurs.begin(); it2!=_listeElecteurs.end();it2++) // map
 			{
-				 //map1[*it2]++; //Plus tard , implementer vote pour electeur
+				string AA = vote(*it2);
+				map1[AA]++; //Plus tard , implementer vote pour electeur
 			}
+			string mapWnom = map1.begin()->first;
+			int mapWval = map1.begin()->second;
+			for(map<string,int>::const_iterator it3 = map1.begin() ; it3 != map1.end() ; it3++)
+			{	
+				if(mapWval< it3->second)
+				{
+					mapWnom = it3->first;
+					mapWval = it3->second;
+				}
+				//cout << "Le candidat est " << it3->first << " avec " << it3->second <<" voix" << endl;
+			}
+			
+			cout << mapWnom << " a gagné l'élection avec " << mapWval << " voix " << endl;
+			
 	//	}
 	//
 		// On determine quel candidat a le plus de voix
 		// La map est automatiquement trié normalement	
 		// On l'affiche
-
 		
 		//cout <<"Le candidat qui a gagné est : " << (map1.end())->first << "avec " << (map1.end())->second << "voix" << endl; //A faire plus tard , implementer << pour Electeur
 	}

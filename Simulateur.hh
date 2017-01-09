@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <map>
 #include <ctime>
+#include <cmath>
 
 #include "candidat.hh"
 #include "media.hh"

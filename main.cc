@@ -38,6 +38,14 @@ int main()
   // get_image()
   int image = c.get_image();
   cout<<"\tImage : "<< image << endl;
+  
+    Candidat c2("Toto2","neutre",2);
+    
+    Candidat c3("Toto3","neutre",2);
+      
+    Candidat c4("Toto4","neutre",2);
+
+  	Candidat c5("Toto5","neutre",2);
 
 /* PARTIE TEST ELECTEUR */  
   // constructeur electeur
@@ -46,7 +54,7 @@ int main()
   Electeur e(8);
   int fute = e.get_intelligence();
   cout<<"\tIntelligence : "<< fute << endl;
-  
+
 
 /* PARTIE TEST interactions */ 
   cout<<endl;
@@ -65,9 +73,12 @@ int main()
   int dt = 12;
   Simulateur SiT(dt);
   SiT.add_candidat(c);
+  SiT.add_candidat(c2);
+  SiT.add_candidat(c3);
+  SiT.add_candidat(c4);
+  SiT.add_candidat(c5);    
   SiT.add_media(M);
   SiT.run();
-  
     
   return 0;
 }
