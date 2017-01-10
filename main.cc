@@ -39,11 +39,11 @@ int main()
   int image = c.get_image();
   cout<<"\tImage : "<< image << endl;
   
-    Candidat c2("Toto2","neutre",2);
+    Candidat c2("Toto2","neutre",10);
     
-    Candidat c3("Toto3","neutre",2);
+    Candidat c3("Toto3","neutre",1);
       
-    Candidat c4("Toto4","neutre",2);
+    Candidat c4("Toto4","neutre",1);
 
   	Candidat c5("Toto5","neutre",2);
 

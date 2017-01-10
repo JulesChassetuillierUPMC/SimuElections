@@ -67,8 +67,14 @@ using namespace std;
 	string Simulateur::vote(Electeur E)
 	{
 		int randnumber = rand() % _listeCandidats.size() ;
+		vector<int> listeImgC;
+		for (vector<Candidat>::iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
+				{
+					listeImgC.push_back(it1->get_image());
+				}
+		int number = ( randnumber + listeImgC[randnumber] + E.get_intelligence() ) % _listeCandidats.size();
 
-		return _listeCandidats[randnumber].get_nom();
+		return _listeCandidats[number].get_nom();
 
 	}
 
@@ -90,6 +96,7 @@ using namespace std;
 			for(i=0;i<1000;i++)
 			{
 				int randInt = rand() % 11;
+				//int randInt = 10; pour nos tests
 				Electeur E(randInt);
 				_listeElecteurs.push_back(E);
 			}
