@@ -64,7 +64,7 @@ int main()
   cout<<"\tImage post interview : "<< image2 <<endl;
   cout<<endl;
   cout<<"Premier electeur d'intelligence "<<fute<<" consulte un article du journal "<<nom_media<<endl;
-  e.TV(M);
+  e.infos(M);
   int fute2 = e.get_intelligence();
   cout<<"\tIntelligence post interview : "<< fute2 << endl;
   
