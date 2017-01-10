@@ -17,7 +17,7 @@ int Electeur::get_intelligence()
 	return _intelligence;
 }
 
-void Electeur::TV(Media M)
+void Electeur::infos(Media M)
 {
 	int influence = M.get_influence();
 	if(influence <= 3) // faible influence
