@@ -71,7 +71,8 @@ int main()
   
   /* PARTIE TEST SIMULATION */
   int dt = 12;
-  Simulateur SiT(dt);
+  int elec=200;
+  Simulateur SiT(dt,elec);
   SiT.add_candidat(c);
   SiT.add_candidat(c2);
   SiT.add_candidat(c3);

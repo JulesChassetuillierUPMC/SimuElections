@@ -3,8 +3,9 @@
 using namespace std;
 
 
-	Simulateur::Simulateur(int D)
-	:_duree(D)
+	Simulateur::Simulateur(int D,int Es)
+	:_duree(D),
+	 _nbElecteurs(Es)
 	{
 		// _listeCandidats = new std::vector<Candidat>;
 		// _listeMedias = new std::vector<Media>;
@@ -80,6 +81,14 @@ using namespace std;
 
 	void Simulateur::run() 
 	{
+			int i;
+			for(i=0;i<_nbElecteurs;i++)
+			{
+				int randInt = rand() % 11;
+				//int randInt = 10; pour nos tests
+				Electeur E(randInt);
+				_listeElecteurs.push_back(E);
+			}	
 		//int i; Pas besoin pour l'instant
 	//	for (int i = 0; i < _duree; ++i)
 	//	{
@@ -90,16 +99,13 @@ using namespace std;
 				{
 					it1->interview(*it); //Plus tard, implementer influence pour candidat
 				}
+				for(vector<Electeur>::iterator itE = _listeElecteurs.begin(); itE!=_listeElecteurs.end();itE++)
+				{
+					itE->infos(*it); // A chaque tour, chaque électeur regarde chaque media
+				}
+
 			}
 			
-			int i;
-			for(i=0;i<1000;i++)
-			{
-				int randInt = rand() % 11;
-				//int randInt = 10; pour nos tests
-				Electeur E(randInt);
-				_listeElecteurs.push_back(E);
-			}
 			
 			map<string, int> map1;
 			for (vector<Electeur>::const_iterator it2 = _listeElecteurs.begin(); it2!=_listeElecteurs.end();it2++) // map
@@ -119,7 +125,7 @@ using namespace std;
 				//cout << "Le candidat est " << it3->first << " avec " << it3->second <<" voix" << endl;
 			}
 			
-			cout << mapWnom << " a gagné l'élection avec " << mapWval << " voix " << endl;
+			cout << mapWnom << " a gagné l'élection avec " << mapWval*100.0/_nbElecteurs << "\% des voix " << endl;
 			
 	//	}
 	//

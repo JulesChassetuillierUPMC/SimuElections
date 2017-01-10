@@ -14,7 +14,7 @@
 class Simulateur
 {
 public:
-	Simulateur(int D);
+	Simulateur(int D,int Es);
 	~Simulateur();
 	
 	void add_candidat(Candidat C);
@@ -28,8 +28,8 @@ public:
 	void run() ;
 
 private:
-	//int _nbElecteurs;
 	int _duree;
+	int _nbElecteurs;
 	//int _nbCandidats;
 	std::vector<Candidat> _listeCandidats;
 	std::vector<Media> _listeMedias;
