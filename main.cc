@@ -2,7 +2,10 @@
 #include "electeur.hh"
 #include "media.hh"
 #include "candidat.hh"
-#include "Simulateur.hh"
+//#include "Simulateur.hh"
+#include "TV.hh"
+#include "Radio.hh"
+#include "Journal.hh"
 #include <ctime>
 #include <cstdlib>
 using namespace std;
@@ -10,19 +13,22 @@ using namespace std;
 int main()
 {
   srand(time(NULL));
+
 /* PARTIE TEST MEDIA */
   // constructeur media
   cout<<"Premier media : "<<endl;
-  Media M("Le Monde",9);
+  //Media M("Le Monde",9);
+  TV T("TF1",8)
+
   // get_name()
-  string nom_media = M.get_name();
+  string nom_media = T.get_name();
   cout<<"\tNom du media : "<< nom_media << endl;
   // get_influence()
-  int infuence = M.get_influence();
+  int infuence = T.get_influence();
   cout<<"\tinfuence : "<< infuence <<endl;
   cout<<endl;
 
-  cout<<"Debut de l'election : "<<endl;
+  // cout<<"Debut de l'election : "<<endl;
   
 /* PARTIE TEST CANDIDAT */
   cout<<endl;
@@ -59,17 +65,17 @@ int main()
 /* PARTIE TEST interactions */ 
   cout<<endl;
   cout<<"Premier candidat "<<name<< " se fait interviewer par "<<nom_media<<endl;
-  c.interview(M);
-  int image2 = c.get_image();
+  T.interview(c); // appel a image_alterne3 normalement
+  int image2 = c.get_image(); 
   cout<<"\tImage post interview : "<< image2 <<endl;
   cout<<endl;
-  cout<<"Premier electeur d'intelligence "<<fute<<" consulte un article du journal "<<nom_media<<endl;
+ /* cout<<"Premier electeur d'intelligence "<<fute<<" consulte un article du journal "<<nom_media<<endl;
   e.infos(M);
   int fute2 = e.get_intelligence();
   cout<<"\tIntelligence post interview : "<< fute2 << endl;
+  */
   
-  
-  /* PARTIE TEST SIMULATION */
+  /* PARTIE TEST SIMULATION 
   int dt = 12;
   int elec=200;
   Simulateur SiT(dt,elec);
@@ -80,6 +86,6 @@ int main()
   SiT.add_candidat(c5);    
   SiT.add_media(M);
   SiT.run();
-    
+  */  
   return 0;
 }
