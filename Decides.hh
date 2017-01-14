@@ -8,4 +8,4 @@ class Decides : public Electeur {
 		~Decides();
 		void infos(Media M);
 	private:
-}
+};

@@ -11,4 +11,4 @@ class Radio : public Media {
 	private:
 		// Meme attributs que Media : nom et influence, hérités de la classe media (normalement), lesquels jouent un rôle dans l'interview
 
-}
+};

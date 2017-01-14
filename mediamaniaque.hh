@@ -11,4 +11,4 @@ class Mediamaniaque : public Influencables {
 	private:
 
 
-} 
+}; 

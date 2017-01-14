@@ -11,4 +11,4 @@ class Influencables : public Electeur {
 	private:
 
  // methodes a rajouter
-}
+};
