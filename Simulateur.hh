@@ -19,8 +19,8 @@ public:
 	
 	void add_candidat(Candidat C);
 	void remove_candidat(Candidat C);
-	void add_media(Media M);
-	void remove_media(Media M);
+	void add_media(Media* M);
+	void remove_media(Media* M);
 	void clear();
 
 
@@ -32,7 +32,7 @@ private:
 	int _nbElecteurs;
 	//int _nbCandidats;
 	std::vector<Candidat> _listeCandidats;
-	std::vector<Media> _listeMedias;
+	std::vector<Media*> _listeMedias;
 	std::vector<Electeur> _listeElecteurs;
 
 };

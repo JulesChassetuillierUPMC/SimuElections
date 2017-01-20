@@ -13,7 +13,7 @@ void Journal::interview(Candidat c)
 	{
 		image = c.image_alterne1(image);
 	}
-	else if(influence <= 6) // media d'influence moyenne, entre 4 et 6
+	else if(_influence <= 6) // media d'influence moyenne, entre 4 et 6
 	{
 		image = c.image_alterne2(image);
 	}	

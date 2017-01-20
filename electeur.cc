@@ -17,9 +17,9 @@ int Electeur::get_intelligence()
 	return _intelligence;
 }
 
-void Electeur::infos(Media M)
+void Electeur::infos(Media* M)
 {
-	int influence = M.get_influence();
+	int influence = M->get_influence();
 	if(influence <= 3) // faible influence
 	{
 		if(_intelligence == 0) // reste simpliste : on pourrait faire des cas de figure en fonction de la catégorie (con...) 

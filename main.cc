@@ -8,6 +8,10 @@
 #include "Journal.hh"
 #include <ctime>
 #include <cstdlib>
+
+#include <SDL/SDL.h>
+//#include <SDL/SDL_tff.h>
+
 using namespace std;
 
 int main()
@@ -18,7 +22,7 @@ int main()
   // constructeur media
   cout<<"Premier media : "<<endl;
   //Media M("Le Monde",9);
-  TV T("TF1",8)
+  TV T("TF1",8);
 
   // get_name()
   string nom_media = T.get_name();
@@ -87,5 +91,15 @@ int main()
   SiT.add_media(M);
   SiT.run();
   */  
+  
+      if (SDL_Init(SDL_INIT_VIDEO) == -1) // Démarrage de la SDL. Si erreur :
+    {
+        fprintf(stderr, "Erreur d'initialisation de la SDL : %s\n", SDL_GetError()); // Écriture de l'erreur
+        exit(EXIT_FAILURE); // On quitte le programme
+    }
+ 
+ 
+    SDL_Quit();
+ 
   return 0;
 }

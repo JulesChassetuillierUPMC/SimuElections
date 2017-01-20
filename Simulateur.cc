@@ -22,7 +22,7 @@ using namespace std;
 		_listeCandidats.push_back(C);
 	}
 	
-	void Simulateur::add_media(Media M)
+	void Simulateur::add_media(Media *M)
 	{
 		_listeMedias.push_back(M);
 	}
@@ -43,12 +43,12 @@ using namespace std;
 		i++;
 		}
 	}
-	void Simulateur::remove_media(Media M)
+	void Simulateur::remove_media(Media* M)
 	{
 		int i=0;
-		for (vector<Media>::const_iterator it2 = _listeMedias.begin(); it2!=_listeMedias.end();it2++)
+		for (vector<Media*>::const_iterator it2 = _listeMedias.begin(); it2!=_listeMedias.end();it2++)
 		{
-			if(M.get_name()==it2->get_name())
+			if(M->get_name()==(*it2)->get_name())
 			{
 				_listeMedias.erase(_listeMedias.begin()+i);
 			}
@@ -93,11 +93,11 @@ using namespace std;
 	//	for (int i = 0; i < _duree; ++i)
 	//	{
 			//int j; pas besoin pour l'instant
-			for (vector<Media>::const_iterator it = _listeMedias.begin(); it!=_listeMedias.end();it++)
+			for (vector<Media*>::const_iterator it = _listeMedias.begin(); it!=_listeMedias.end();it++)
 			{
 				for (vector<Candidat>::iterator it1 = _listeCandidats.begin(); it1!=_listeCandidats.end();it1++)
 				{
-					it1->interview(*it); //Plus tard, implementer influence pour candidat
+					(*it)->interview(*it1); //Plus tard, implementer influence pour candidat
 				}
 				for(vector<Electeur>::iterator itE = _listeElecteurs.begin(); itE!=_listeElecteurs.end();itE++)
 				{

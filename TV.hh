@@ -6,8 +6,8 @@
 // TV : destinée aux électeurs "Telemaniaque", et cons de surcroît
 class TV : public Media {
 	public:
-			TV(); // Constructeur, besoin de mettre les attributs ? (même constructeur que media)
-			~TV();
+			TV(std::string name, int influence); // Constructeur, besoin de mettre les attributs ? (même constructeur que media)
+			~TV(){}
 			void interview(Candidat c); // Une chaine TV interviewe un candidat
 			
 	private:
