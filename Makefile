@@ -1,10 +1,10 @@
 EXEC=election
 SOURCES=$(wildcard *.cc)
 OBJECTS=$(SOURCES:.cc=.o)
-CCFLAGS=-Wall -Werror `sdl-config --cflags` -lSDL 
+CCFLAGS=-Wall -Werror `sdl-config --cflags` 
 CC=g++
 $(EXEC): $(OBJECTS)
-	$(CC) $(OBJECTS) `sdl-config --libs` -o $(EXEC)
+	$(CC) $(OBJECTS) `sdl-config --libs` -lSDL -lSDL_image -o $(EXEC)
 %.o: %.cc
 	$(CC) $(CCFLAGS) -c $< -o $@
 clean:

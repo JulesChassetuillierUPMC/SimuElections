@@ -10,9 +10,26 @@
 #include <cstdlib>
 
 #include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 //#include <SDL/SDL_tff.h>
 
 using namespace std;
+
+void pause()
+{
+    int continuer = 1;
+    SDL_Event event;
+ 
+    while (continuer)
+    {
+        SDL_WaitEvent(&event);
+        switch(event.type)
+        {
+            case SDL_QUIT:
+                continuer = 0;
+        }
+    }
+}
 
 int main()
 {
@@ -97,8 +114,36 @@ int main()
         fprintf(stderr, "Erreur d'initialisation de la SDL : %s\n", SDL_GetError()); // Écriture de l'erreur
         exit(EXIT_FAILURE); // On quitte le programme
     }
+    SDL_Surface *ecran = NULL, *imageDeFond = NULL;
+    ecran = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE| SDL_RESIZABLE | SDL_DOUBLEBUF); // Ouverture de la fenêtre
+        if (ecran == NULL) // Si l'ouverture a échoué, on le note et on arrête
+
+    {
+
+        fprintf(stderr, "Impossible de charger le mode vidéo : %s\n", SDL_GetError());
+
+        exit(EXIT_FAILURE);
+
+    }
+    SDL_WM_SetCaption("Election Simulator !", NULL);
+    
+    SDL_Rect positionFond;
+    positionFond.x = 0;
+    positionFond.y = 0;
+    
+    imageDeFond = IMG_Load("Elections-2017.png");
+    SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 17, 75, 50));
+    
+    SDL_BlitSurface(imageDeFond, NULL, ecran, &positionFond);
+    
+     // Coloration de la surface ecran en bleu-vert
+
+
+    SDL_Flip(ecran); /* Mise à jour de l'écran avec sa nouvelle couleur */   
+    pause(); // Mise en pause du programme
  
  
+    SDL_FreeSurface(imageDeFond);
     SDL_Quit();
  
   return 0;
