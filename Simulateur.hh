@@ -6,6 +6,7 @@
 #include <map>
 #include <ctime>
 #include <cmath>
+#include <sstream>
 
 #include "candidat.hh"
 #include "media.hh"
@@ -25,7 +26,8 @@ public:
 
 
 	std::string vote(Electeur E);
-	void run() ;
+	//std::stringstream* run() ;
+	std::string run();
 
 private:
 	int _duree;

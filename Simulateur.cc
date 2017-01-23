@@ -79,8 +79,9 @@ using namespace std;
 
 	}
 
-	void Simulateur::run() 
+	string Simulateur::run() 
 	{
+
 			int i;
 			for(i=0;i<_nbElecteurs;i++)
 			{
@@ -125,7 +126,18 @@ using namespace std;
 				//cout << "Le candidat est " << it3->first << " avec " << it3->second <<" voix" << endl;
 			}
 			
-			cout << mapWnom << " a gagné l'élection avec " << mapWval*100.0/_nbElecteurs << "\% des voix " << endl;
+//			cout << mapWnom << " a gagné l'élection avec " << mapWval*100.0/_nbElecteurs << "\% des voix " << endl;
+		//stringstream Stext1 ;
+		//Stext1 << mapWnom << " a gagné l'élection avec " << mapWval*100.0/_nbElecteurs << "\% des voix " << endl;
+		//stringstream* Stext = &Stext1;
+		
+	//	string Stext = mapWnom +  " a gagné l'élection avec " + (mapWval*100.0/_nbElecteurs).to_string() << "\% des voix " << endl;
+	ostringstream data;		
+	data << mapWnom << " a gagne l'election avec " << mapWval*100.0/_nbElecteurs << "\% des voix " ;
+		string	Stext = data.str();
+		_listeElecteurs.clear();
+		
+		return Stext;
 			
 	//	}
 	//
