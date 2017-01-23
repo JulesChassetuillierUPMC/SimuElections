@@ -8,5 +8,5 @@ $(EXEC): $(OBJECTS)
 %.o: %.cc
 	$(CC) $(CCFLAGS) -c $< -o $@
 clean:
-	rm -f $(OBJECTS) $(EXEC)
+	rm -f $(OBJECTS) media.o $(EXEC)
 
